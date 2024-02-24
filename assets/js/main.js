@@ -1,3 +1,1 @@
-import './firebase.js'
-
-console.log("holaaa")
+import './registerform.js'
