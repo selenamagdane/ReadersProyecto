@@ -15,6 +15,10 @@ loginForm.addEventListener("submit", async (e) => {
 
         showMessage("Bienvenido de nuevo ", "success");
 
+        setTimeout(() => {
+            window.location.href = "index2.html";
+        }, 2000);
+
     } catch (error) {
         console.log(error.code)
         if (error.code === 'auth/wrong-password') {
