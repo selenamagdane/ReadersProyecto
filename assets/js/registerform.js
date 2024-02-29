@@ -24,7 +24,9 @@ registerForm.addEventListener('submit', async (e) => {
         
     showMessage("Bienvenido " + userCredential.user.displayName)
 
-    window.location.href = "index2.html";
+    setTimeout(() => {
+        window.location.href = "index2.html";
+    }, 2000);
 
     } catch (error) {
         console.error('Error al registrar usuario:', error);
