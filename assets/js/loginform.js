@@ -13,7 +13,7 @@ loginForm.addEventListener("submit", async (e) => {
         const userCredentials = await signInWithEmailAndPassword(auth, email, password);
         console.log(userCredentials);
 
-        showMessage("Welcome de nuevo ", "success");
+        showMessage("Bienvenido de nuevo ", "success");
 
     } catch (error) {
         console.log(error.code)
