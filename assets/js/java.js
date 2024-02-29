@@ -25,12 +25,22 @@ const closeThemeModal = (e) => {
 themeModal.addEventListener('click', closeThemeModal);
 
 theme.addEventListener('click', openThemeModal);
+
  
 //fonts
-fontSizes.forEach(size => {
-    let fontSize;
 
+// eliminar la class activa de los intervalos o del selector de tamaño de fuente
+const removeSizeSelector = () => {
+    fontSizes.forEach(size => {
+        size.classList.remove('active');
+    })
+}
+
+fontSizes.forEach(size => {
     size.addEventListener('click', () => {
+        removeSizeSelector();
+        let fontSize;
+        size.classList.toggle('active');
 
         if(size.classList.contains('font-size-1')){
             fontSize = '10px';
@@ -63,3 +73,5 @@ fontSizes.forEach(size => {
     });
 
 });
+
+// change primary color
