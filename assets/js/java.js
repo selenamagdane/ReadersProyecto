@@ -26,9 +26,6 @@ themeModal.addEventListener('click', closeThemeModal);
 
 theme.addEventListener('click', openThemeModal);
 
- 
-//fonts
-
 // eliminar la class activa de los intervalos o del selector de tamaño de fuente
 const removeSizeSelector = () => {
     fontSizes.forEach(size => {
@@ -75,3 +72,22 @@ fontSizes.forEach(size => {
 });
 
 // change primary color
+
+// Funciones para controlar la ventana emergente de comentarios
+function openPopup() {
+    document.getElementById("comment-popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("comment-popup").style.display = "none";
+}
+
+function postComment() {
+    // Lógica para publicar el comentario
+    // Por ejemplo, enviar el comentario al servidor
+    closePopup(); // Cierra la ventana emergente después de publicar el comentario
+}
+
+function iniciarSesion() {
+    document.getElementById("comment-popup").classList.remove("hide");
+}

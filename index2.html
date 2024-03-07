@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readers</title>
+    <title>ReadersDigital.com</title>
     <link rel="stylesheet" href="assets/css/style2.css">
 </head>
 <body>
     <nav>
         <div class="container">
             <h2 class="log">
-                Readers
+                ReadersDigital.com
             </h2>
             <div class="search-bar">
                 <ion-icon name="search-outline"></ion-icon>
@@ -18,7 +18,10 @@
             </div>
             
             <div class="create">
-                <label class="btn btn-primary" for="create-post">Cerrar Sesion</label>
+                <label class="btn btn-primary" for="create-post">Crear</label>
+                <div class="profile-photo">
+                    <img src="assets/img/profile-1.jpg">
+                </div>
             </div>
         </div>
     </nav>    
@@ -29,17 +32,6 @@
         
         <!--left-->
         <div class="left">
-            <a class="profile">
-                <div class="profile-photo">
-                    <img src="assets/img/profile-1.jpg">
-                </div>
-                <div class="handle">
-                    <h4>Diana Ayi</h4>
-                    <p class="text-muted">
-                        @dayi
-                    </p>
-                </div>
-            </a> 
             <!--sidebar-->
             <div class="sidebar">
                 <a class="menu-item active">
@@ -69,6 +61,10 @@
                 <a class="menu-item" id="theme">
                     <span><ion-icon name="color-palette-outline"></ion-icon></span> <h3>Temas</h3>
                 </a>
+
+                <a class="menu-item">
+                    <span><ion-icon name="settings-outline"></ion-icon></span> <h3>Configuración</h3>
+                </a>
                 
             </div>
             <!--end of sidebar-->
@@ -81,8 +77,8 @@
                 <div class="profile-photo">
                     <img src="assets/img/profile-1.jpg">
                 </div>
-                <input type="text" placeholder="Qué tienes en mente, Diana" id="create-post">
-                <input type="submit" value="Publicar" class="btn btn-primary">
+                <input type="text" placeholder="Qué tienes en mente" id="create-post">
+                <input type="submit" value="Publicar" class="btn btn-primary" onclick="agregarEtiqueta()">
             </form>
             <!--feeds-->
             <div class="feeds">
@@ -109,13 +105,20 @@
                     <div class="action-buttons">
                         <div class="interaction-buttons">
                             <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+                            <div id="comment-popup" class="popup hide">
+                                <textarea id="comment-text" placeholder="Escribe tu comentario aquí..."></textarea>
+                                <button onclick="postComment()">Publicar</button>
+                                <button onclick="closePopup()">Cancelar</button>
+                            </div>                            
+                            <span class="comment-icon" onclick="openPopup()"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
                             <span><ion-icon name="share-social-outline"></ion-icon></span>
                         </div>
                         <div class="bookmark">
                             <span><ion-icon name="bookmark-outline"></ion-icon></span>
                         </div>
                     </div>
+                    
+
                     <div class="liked-by">
                         <span><img src="assets/img/profile-2.jpg"></span>
 
@@ -131,367 +134,12 @@
                     </div>
                     <div class="comments text-muted">ver todo 277 comentarios</div>
                 </div>
-                <!--aqui acaba feed 1-->
-
-                <!--feed 2-->
-                <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-12.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Alexa15</h3>
-                                <small>Costa Rica, 15 MINUTOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="assets/img/feed-2.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    <div class="liked-by">
-                        <span><img src="assets/img/profile-10.jpg"></span>
-
-                        <span><img src="assets/img/profile-13.jpg"></span>
-
-                        <span><img src="assets/img/profile-6.jpg"></span>
-                        
-                        <p>como por <b>Ernesto triunfador </b> y <b>2,000 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Alexa15 </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#Wattpad</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 201 comentarios</div>
-                </div>
-                <!--aqui acaba feed 2-->
-
-                <!--feed 3-->
-                <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-17.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Lilit</h3>
-                                <small>Paraguay, 10 MINUTOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="assets/img/feed-3.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    <div class="liked-by">
-                        <span><img src="assets/img/profile-16.jpg"></span>
-
-                        <span><img src="assets/img/profile-11.jpg"></span>
-
-                        <span><img src="assets/img/profile-20.jpg"></span>
-                        
-                        <p>como por <b> triunfador </b> y <b>2,310 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Lilit </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#Wattpad</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 240 comentarios</div>
-                </div>                
-                <!--aqui acaba feed 3-->
-
-                <!--feed 4-->
-                <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-5.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Ana586</h3>
-                                <small>Bolivia, 5 MINUTOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="assets/img/feed-4.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    <div class="liked-by">
-                        <span><img src="assets/img/profile-14.jpg"></span>
-
-                        <span><img src="assets/img/profile-16.jpg"></span>
-
-                        <span><img src="assets/img/profile-18.jpg"></span>
-                        
-                        <p>como por <b>Carla triunfador </b> y <b>2,323 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Ana586 </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#Wattpad</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 2785 comentarios</div>
-                </div>
-                <!--aqui acaba feed 4-->
-
-                 <!--feed 5-->
-                 <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-3.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Samanta</h3>
-                                <small>Mexico, 2 MINUTOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="assets/img/feed-5.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    <div class="liked-by">
-                        <span><img src="assets/img/profile-10.jpg"></span>
-
-                        <span><img src="assets/img/profile-12.jpg"></span>
-
-                        <span><img src="assets/img/profile-8.jpg"></span>
-                        
-                        <p>como por <b>Luhana663 triunfador </b> y <b>2,323 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Samanta </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#Manhwa</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 277 comentarios</div>
-                </div>
-                <!--aqui acaba feed 5-->
-
-                 <!--feed 6-->
-                 <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-6.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Beatriz95</h3>
-                                <small>Colombia, 20 SEGUNDOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="assets/img/feed-6.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    <div class="liked-by">
-                        <span><img src="assets/img/profile-11.jpg"></span>
-
-                        <span><img src="assets/img/profile-17.jpg"></span>
-
-                        <span><img src="assets/img/profile-3.jpg"></span>
-                        
-                        <p>como por <b>Ernesto triunfador </b> y <b>2,323 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Beatriz95 </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#lifestyle</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 277 comentarios</div>
-                </div>
-                <!--aqui acaba feed 6-->
-
-                 <!--feed 7-->
-                 <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-9.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Luhana663</h3>
-                                <small>Argentina, 20 MINUTOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="images/feed-7.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <span><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    <div class="liked-by">
-                        <span><img src="images/profile-13.jpg"></span>
-
-                        <span><img src="images/profile-4.jpg"></span>
-
-                        <span><img src="images/profile-2.jpg"></span>
-                        
-                        <p>como por <b>Ernesto triunfador </b> y <b>2,323 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Luhana663 </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#lifestyle</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 277 comentarios</div>
-                </div>
-                <!--aqui acaba feed 7-->
-
-                <!--aqui acaba el feed en total-->
             </div>
             <!--aqui el feeds-->
 
         </div>
-        <!--right-->
-
-        <div class="right">
-            <div class="messages">
-
-                    <!--message category -->
-                    <div class="category">
-                        <h6 class="active">Primero</h6>
-                        <h6>General</h6>
-                        <h6 class="message-requests">Chat(7)</h6>
-                    </div>
-
-                    <!--menssage 1-->
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="images/profile-17.jpg">
-                        </div>
-                        <div class="message-body">
-                            <h5>Lilit</h5>
-                            <p class="text-muted">lee "Hermana en esta vida soy la reina"</p>
-                        </div>
-                    </div>
-
-                    <!--menssage 2-->
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="images/profile-18.jpg">
-                            <div class="active"></div>
-                        </div>
-                        <div class="message-body">
-                            <h5>Estrella</h5>
-                            <p class="text-bold">Como que te leeiste todos los capitulos</p>
-                        </div>
-                    </div>
-
-                    <!--menssage 3-->
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="images/profile-19.jpg">
-                        </div>
-                        <div class="message-body">
-                            <h5>Emili</h5>
-                            <p class="text-muted">Has leeido "Casate con mi esposo"♥</p>
-                        </div>
-                    </div>
-                    
-                    <!--menssage 4-->
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="images/profile-11.jpg">
-                            <div class="active"></div>
-
-                        </div>
-                        <div class="message-body">
-                            <h5>José Javier</h5>
-                            <p class="text-bold">Acabo de despertar causaaaa</p>
-                        </div>
-                    </div>
-
-                    <!--menssage 5-->
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="images/profile-2.jpg">
-                        </div>
-                        <div class="message-body">
-                            <h5>Jennifer45</h5>
-                            <p class="text-muted">Hola!!! ♥</p>
-                        </div>
-                    </div>
-
-                </div>
-            <!--end of message-->
+    </div>
+</main>
 
 <!--theme customization-->
 <div class="customize-theme">
