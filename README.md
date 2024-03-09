@@ -27,11 +27,11 @@ Este proyecto puede ser utilizado para interactuar con demás personas con gusto
 -¿Cuál es el principal objetivo?
 * Queremos que muchas personas visiten y usen Readers para puedan compartir su hermomso hobbi utilizando este proyecto realizado por personas principantes en el aprendizaje del desarrollo web.
 
-##Contacto
+## Contacto
 Nos pueden conocer a través de nuestras cuentas de GitHub y contactar por nuestros correos electrónicos:
 - selenamagdane@gmail.com
 
-##Notas de versión
+## Notas de versión
 Detalles sobre las versiones anteriores y cambios en la versión actual. (Borrador y maquetación hechos en Canva y Visual Stuio Code).
 ![Borrador](<assets/img/IMG-20240309-WA0087.jpeg>)
 ![Borrador](<assets/img/IMG-20240309-WA0089.jpeg>)
@@ -39,7 +39,7 @@ Detalles sobre las versiones anteriores y cambios en la versión actual. (Borrad
 ![Maquetacion](<assets/img/maqueta 1.png>)
 ![Maquetacion](<assets/img/maqueta 3.png>)
 
-#Enlaces Utiles
+# Enlaces Utiles
 
 Enlaces adicionales, documentación, tutoriales o recursos relacionados: Videos: https://www.youtube.com/watch?v=4CgeSqvdW2s https://www.youtube.com/watch?v=hlwlM4a5rxg
 
