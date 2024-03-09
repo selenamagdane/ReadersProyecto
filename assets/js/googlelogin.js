@@ -6,10 +6,13 @@ import { showMessage } from './showmenssage.js';
 const googlebuttom = document.querySelector('#google-login')
 
 googlebuttom.addEventListener('click', async () =>{
+    console.log(1);
 
     const provider = new GoogleAuthProvider()
 
     try {
+        console.log(2)
+
         const credentials = await signInWithPopup(auth, provider)
         console.log(credentials)
 

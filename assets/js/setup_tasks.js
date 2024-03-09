@@ -12,11 +12,11 @@ let id = "";
 let editStatus = false;
 let userGlobal;
 
-let user = JSON.parse(localStorage.getItem("user"));
-
-addEventListener("DOMContentLoaded", () => {
+export default function setupTasks(user) {
     userGlobal = user;
-    console.log(user);
+
+    const userPhotoURL = userGlobal.photoURL
+
 
     onGetTask((querySnapshot) => {
         let html = '';
@@ -29,6 +29,7 @@ addEventListener("DOMContentLoaded", () => {
                 <div class="card mb-3">
                     <div class="card-body">
                     <h6>${data.userName}</h6>
+                    <img src=${data.userPhotoURL}>
                         <h4 class="card-title">${data.title}</h4>
                         <p class="card-text">${data.description}</p>
                         <h6>${data.date}</h6>
@@ -43,7 +44,9 @@ addEventListener("DOMContentLoaded", () => {
         });
 
         tasksContainer.innerHTML = html;
-        
+
+        //delete
+
         const btssDelete = document.querySelectorAll(".btn-delete-custom");
 
         btssDelete.forEach(btn => {
@@ -66,9 +69,9 @@ addEventListener("DOMContentLoaded", () => {
                 taskForm['btn-task-save'].innerHTML = 'Update';
             });
         });
-
     });
-});
+};
+
 taskForm.addEventListener("submit", (e) => {
     // Evitamos que recargue la pagina
     e.preventDefault();
@@ -79,21 +82,18 @@ taskForm.addEventListener("submit", (e) => {
     
     const time = getFormattedHour(fullDate);
 
-    const userName = userGlobal.displayName;
+    const userName = userGlobal.displayName
 
     const title = taskForm["task-title"].value;
     const description = taskForm["task-content"].value;
 
     if (!editStatus){
-        createTask(title, description, userName, userGlobal.photoURL, date, time);
+        createTask(title, description, userName, date, time);
     }
     else{
         updateTask( id, ({
             title: title,
-            description: description,
-            userName: userName,
-            date: date,
-            time: time
+            description: description
         }));
 
         editStatus = false;
@@ -116,17 +116,17 @@ function getFormattedDate(date) {
     return month + '/' + day + '/' + year;
   }
 
-  function getFormattedHour(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
- 
-    if (hours < 10) {
-     hours = '0' + hours;
-    }
- 
-    if (minutes < 10) {
-     minutes = '0' + minutes;
-    }
- 
-    return hours + ':'  + minutes;
+function getFormattedHour(date) {
+   var hours = date.getHours();
+   var minutes = date.getMinutes();
+
+   if (hours < 10) {
+    hours = '0' + minutes;
+   }
+
+   if (minutes < 10) {
+    minutes = '0' + minutes;
+   }
+
+   return hours + ':'  + minutes;
 }

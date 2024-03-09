@@ -1,8 +1,15 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
- import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
  import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"
- import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+ import { 
+  getFirestore,
+  collection,
+  doc,
+  addDoc,
+  getDoc,
+  updateDoc,
+  deleteDoc,
+  onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
  // TODO: Add SDKs for Firebase products that you want to use
  // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,8 +27,18 @@
 
  // Initialize Firebase
  export const app = initializeApp(firebaseConfig);
- const analytics = getAnalytics(app);
  export const auth = getAuth(app)
  export const firestore = getFirestore(app);
+ export const db = getFirestore(app);
 
  console.log(app)
+
+export const createTask = (title, description, username, userPhotoURL, time, date) => addDoc(collection(db, "post"),{title, description, username, userPhotoURL, time, date});
+
+export const getTask = id => getDoc(doc(db, "post", id));
+
+export const onGetTask = (callback) => onSnapshot(collection(db, "post"), callback);
+
+export const updateTask = (id, newFields) => updateDoc(doc(db, "post", id), newFields);
+
+export const deleteTask = id => deleteDoc(doc(db, "post", id));

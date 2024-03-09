@@ -1,196 +1,126 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadersDigital.com</title>
-    <link rel="stylesheet" href="assets/css/style2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link href="assets/css/styles.css" />
+  <!--cuasaaaa te doy mi bendio-->
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <h2 class="log">
-                ReadersDigital.com
-            </h2>
-            <div class="search-bar">
-                <ion-icon name="search-outline"></ion-icon>
-                <input type="search" placeholder="Buscar">
-            </div>
-            
-            <div class="create">
-                <label class="btn btn-primary">Cerrar Sesion</label>
-                <div class="profile-photo">
-                    <img src="assets/img/profile-1.jpg">
-                </div>
-            </div>
-        </div>
-    </nav>    
-
-    <!--main-->
-<main>
-    <div class="container">
-        
-        <!--left-->
-        <div class="left">
-            <!--sidebar-->
-            <div class="sidebar">
-                <a class="menu-item active">
-                    <span><ion-icon name="home-outline"></ion-icon></span> <h3>Inicio</h3>
-                </a>
-
-                <a class="menu-item">
-                    <span><ion-icon name="library-outline"></ion-icon></span> <h3>Libros</h3>               
-                </a>
-
-                <a class="menu-item">
-                    <span><ion-icon name="book-outline"></ion-icon></span> <h3>Manhuas</h3>
-                </a>
-
-                <a class="menu-item">
-                    <span><ion-icon name="book-outline"></ion-icon></span> <h3>Mangas</h3>
-                </a>
-
-                <a class="menu-item">
-                    <span><ion-icon name="book-outline"></ion-icon></span> <h3>Manhwa</h3>
-                </a>
-
-                <a class="menu-item">
-                    <span><ion-icon name="bookmarks-outline"></ion-icon></span> <h3>Favoritos</h3>
-                </a>
-
-                <a class="menu-item" id="theme">
-                    <span><ion-icon name="color-palette-outline"></ion-icon></span> <h3>Temas</h3>
-                </a>
-                
-            </div>
-            <!--end of sidebar-->
-            <label for="create-post" class="btn btn-primary">Crear Publicación</label>
-        </div>
-        <!--middle-->
-        <div class="middle">
-            <form class="create-post">
-                
-                <div class="profile-photo">
-                    <img src="assets/img/profile-1.jpg">
-                </div>
-                <input type="text" placeholder="Qué tienes en mente" id="create-post">
-                <input type="submit" value="Publicar" class="btn btn-primary" onclick="agregarEtiqueta()">
-            </form>
-            <!--feeds-->
-            <div class="feeds">
-                            <!--feed 1-->
-                <div class="feed">
-                    <div class="head">
-                        <div class="user">
-                            <div class="profile-photo">
-                                <img src="assets/img/profile-8.jpg">
-                            </div>
-                            <div class="ingo">
-                                <h3>Jesús</h3>
-                                <small>Perú, 20 MINUTOS AGO</small>
-                            </div>
-                        </div>
-                        <span class="edit">
-                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </span>
-                    </div>
-                    <div class="photo">
-                        <img src="assets/img/feed-1.jpg">
-                    </div>
-
-                    <div class="action-buttons">
-                        <div class="interaction-buttons">
-                            <span><ion-icon name="heart-outline"></ion-icon></span>
-                            <div id="comment-popup" class="popup hide">
-                                <textarea id="comment-text" placeholder="Escribe tu comentario aquí..."></textarea>
-                                <button onclick="postComment()">Publicar</button>
-                                <button onclick="closePopup()">Cancelar</button>
-                            </div>                            
-                            <span class="comment-icon" onclick="openPopup()"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-                            <span><ion-icon name="share-social-outline"></ion-icon></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><ion-icon name="bookmark-outline"></ion-icon></span>
-                        </div>
-                    </div>
-                    
-
-                    <div class="liked-by">
-                        <span><img src="assets/img/profile-2.jpg"></span>
-
-                        <span><img src="assets/img/profile-7.jpg"></span>
-
-                        <span><img src="assets/img/profile-15.jpg"></span>
-                        
-                        <p>como por <b>Pedro triunfador </b> y <b>2,323 otros </b></p>
-                    </div>
-                    <div class="caption">
-                        <p><b>Jesús </b> Lorem ipsum dolor sit amet consectetur. 
-                            <span class="harsh-tag">#Wattpad</span></p>
-                    </div>
-                    <div class="comments text-muted">ver todo 277 comentarios</div>
-                </div>
-            </div>
-            <!--aqui el feeds-->
-
-        </div>
-
-        
-        <div class="right">
-            <div class="messages"> 
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="images/profile-2.jpg">
-                        </div>
-                        <div class="message-body">
-                            <h5>Jennifer45</h5>
-                        </div>
-                    </div>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border rounded">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-link text-light" href="#" class="text-success" >Readers</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link logged-in nav-link text-light" id="logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</main>
+  </nav>
+  </header>
 
-<!--theme customization-->
-<div class="customize-theme">
-    <div class="card">
-        <h2>Personaliza tu vista</h2>
-        <p class="text-muted">Administre el tamaño, el color y el fondo de su fuente</p>
-        
-        <!--font sizes-->
-        <div class="font-size">
-            <h4>Tamaño de fuente</h4>
-            <div>
-                <h6>Aa</h6>
-            <div class="choose-size">
-                <span class="font-size-1"></span>
-                <span class="font-size-2 active"></span>
-                <span class="font-size-3"></span>
-                <span class="font-size-4"></span>
-                <span class="font-size-5"></span>
-            </div>
-            <h3>Aa</h3>
-            </div>
+  <main class="row w-75 mx-auto" id="task-main-container">
+    <div class="col-md-6" id="task-form-container">
+      <div id="create-tasks">
+        <h2 class="text-light mb-4">Publicar:</h2>
+        <form id="create-form">
+          <div class="form-group">
+          <label for="task-title" class="text-light">Title:</label>
+          <input type="text" class="form-control" id="task-title" placeholder="Ingresa el título"/>
         </div>
-
-        <!--Primary colors-->
-        <div class="color">
-            <h4>Color</h4>
-            <div class="choose-color">
-                <span class="font-color-1 active"></span>
-                <span class="font-color-2"></span>
-                <span class="font-color-3"></span>
-                <span class="font-color-4"></span>
-                <span class="font-color-5"></span>
-            </div>
+        <div class="form-group">
+          <label for="task-content" class="text-light">Content:</label>
+          <textarea class="form-control" id="task-content" cols="30" rows="5" placeholder="Ingresa el contenido"></textarea>
+        <hr>
         </div>
-
+          <button type="submit" id="btn-task-save" class="btn btn-dark">Create Task</button>
+        </form>
+      </div>
     </div>
-</div>
+  
+    <!-- Acá se mostrarán las tasks de la base de datos -->
+    <div class="col-md-6" id="tasks-container"></div>
+  </main>
 
+  <!-- Signin modal -->
+  <div class="modal fade" id="signin-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Signin</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signin-form">
+            <label for="email-signin" class="mb-1">Email</label>
+            <input id="email-signin" type="email" class="form-control mb-3" placeholder="Email" required>
+            <label for="password-signin" for="password-signin" class="mb-1">Password</label>
+            <input id="password-signin" type="password" class="form-control mb-3" placeholder="******" required>
+            <button type="submit" class="btn btn-primary form-control mb-2">Login</button>
+            <hr />
+            <button id="google-login" class="btn btn-info">Google</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Signup modal -->
+  <div class="modal fade" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Signup</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signup-form">
+            <label for="email-signup" class="mb-1">Email</label>
+            <input id="email-signup" type="email" class="form-control mb-3" placeholder="Email" required>
+            <label for="password-signup" class="mb-1">Password</label>
+            <input id="password-signup" type="password" class="form-control mb-3" placeholder="******" required>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    body {
+      background-image: url('./assets/img/LIBRARIAPP\ \(6\).png');
+      background-size: cover; 
+      background-position: center; 
+    }
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.6) !important; 
+    }
+    #task-main-container {
+    display: flex;
+    align-items:center;
+    height: 100vh; /* Para que ocupe toda la altura de la ventana */
+  }
 
-    <script src="assets/js/java.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  #task-form-container {
+    height: auto; /* O ajusta una altura específica según tus necesidades */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px; /* Ancho máximo para evitar que se extienda demasiado */
+    overflow-y: hidden !important; /* Evitar la barra de desplazamiento vertical */
+}
+
+  </style>
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
