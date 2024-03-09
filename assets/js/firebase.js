@@ -33,7 +33,7 @@
 
  console.log(app)
 
-export const createTask = (title, description, username, userPhotoURL, time, date) => addDoc(collection(db, "post"),{title, description, username, userPhotoURL, time, date});
+export const createTask = (title, description, username, userPhotoURL, date, time) => addDoc(collection(db, "post"),{title, description, username, userPhotoURL, date, time});
 
 export const getTask = id => getDoc(doc(db, "post", id));
 

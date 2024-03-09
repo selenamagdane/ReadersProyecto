@@ -28,33 +28,20 @@ addEventListener("DOMContentLoaded", () => {
            
 
             html += `
-                <div class="card mb-3 transparent-card">
+                <div class="card mb-3">
                     <div class="card-body">
-                    <h6 class="text-light">${data.username}</h6>
+                    <h6>${data.username}</h6>
                     <img src=${data.userPhotoURL}>
-                        <h4 class="text-light card-title">${data.title}</h4>
-                        <p class="text-light card-text">${data.description}</p>
-                        <h6 class="text-light">${data.date}</h6>
-                        <p class="text-light">${data.time}</p>
+                        <h4 class="card-title">${data.title}</h4>
+                        <p class="card-text">${data.description}</p>
+                        <h6>${data.date}</h6>
+                        <p>${data.time}</p>
                         <div class="row">
-                        <button class='btn btn-dark btn-delete-custom mx-auto col-5' data-id='${doc.id}'>Delete</button>
-                        <button class='btn btn-dark btn-edit-custom mx-auto col-5' data-id='${doc.id}'>Edit</button>
+                            <button class='btn btn-danger btn-delete-custom mx-auto col-5' data-id='${doc.id}'>Delete</button>
+                            <button class='btn btn-info btn-edit-custom mx-auto col-5' data-id='${doc.id}'>Edit</button>
+                        </div>
                     </div>
                 </div>
-              </div>
-              <style>
-                body {
-                  background-image: url('./assets/img/esqueleto.png');
-                  background-size: cover; 
-                  background-position: center; 
-                }
-                .navbar {
-                  background-color: rgba(0, 0, 0, 0.6) !important; 
-                }
-            
-                .transparent-card {
-                background-color: rgba(0, 0, 0, 0.6) !important; /* ajusta el último valor (0.6) para cambiar la opacidad */
-                }
             `;
         });
 
