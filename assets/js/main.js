@@ -5,6 +5,8 @@ import {
     deleteTask, 
     getTask} from "./firebase.js";
 
+import "./logout.js"
+
 const taskForm = document.getElementById("create-form");
 const tasksContainer = document.getElementById("tasks-container");
 
@@ -26,19 +28,33 @@ addEventListener("DOMContentLoaded", () => {
            
 
             html += `
-                <div class="card mb-3">
+                <div class="card mb-3 transparent-card">
                     <div class="card-body">
-                    <h6>${data.userName}</h6>
-                        <h4 class="card-title">${data.title}</h4>
-                        <p class="card-text">${data.description}</p>
-                        <h6>${data.date}</h6>
-                        <p>${data.time}</p>
+                    <h6 class="text-light">${data.username}</h6>
+                    <img src=${data.userPhotoURL}>
+                        <h4 class="text-light card-title">${data.title}</h4>
+                        <p class="text-light card-text">${data.description}</p>
+                        <h6 class="text-light">${data.date}</h6>
+                        <p class="text-light">${data.time}</p>
                         <div class="row">
-                            <button class='btn btn-danger btn-delete-custom mx-auto col-5' data-id='${doc.id}'>Delete</button>
-                            <button class='btn btn-info btn-edit-custom mx-auto col-5' data-id='${doc.id}'>Edit</button>
-                        </div>
+                        <button class='btn btn-dark btn-delete-custom mx-auto col-5' data-id='${doc.id}'>Delete</button>
+                        <button class='btn btn-dark btn-edit-custom mx-auto col-5' data-id='${doc.id}'>Edit</button>
                     </div>
                 </div>
+              </div>
+              <style>
+                body {
+                  background-image: url('./assets/img/esqueleto.png');
+                  background-size: cover; 
+                  background-position: center; 
+                }
+                .navbar {
+                  background-color: rgba(0, 0, 0, 0.6) !important; 
+                }
+            
+                .transparent-card {
+                background-color: rgba(0, 0, 0, 0.6) !important; /* ajusta el último valor (0.6) para cambiar la opacidad */
+                }
             `;
         });
 
@@ -91,9 +107,10 @@ taskForm.addEventListener("submit", (e) => {
         updateTask( id, ({
             title: title,
             description: description,
-            userName: userName,
+            username: userName,
             date: date,
-            time: time
+            time: time,
+            userPhotoURL: userGlobal.photoURL
         }));
 
         editStatus = false;
@@ -130,3 +147,4 @@ function getFormattedDate(date) {
  
     return hours + ':'  + minutes;
 }
+
