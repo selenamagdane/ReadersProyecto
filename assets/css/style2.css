@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 :root{
-    --color-white: hsl(252, 30%, 100%);
+    --color-black: hsla(0, 0%, 100%, 0.932);
     --color-light: hsl(252, 30%, 95%);
     --color-gray: hsl(252, 15%, 65%);
-    --color-primary: hsl(252, 75%, 60%);
+    --color-primary: hsl(0, 45%, 74%);
     --color-secondary: hsl(252, 100%, 90%);
     --color-success: hsl(120, 95%, 65%);
     --color-danger: hsl(0, 95%, 65%);
-    --color-dark: hsl(252, 30%, 17%);
-    --color-black: hsl(252, 30%, 10%);
+    --color-dark: hsl(0, 0%, 0%);
+    --color-white: hsla(300, 3%, 7%, 0.842);
 
     --border-radius: 2rem;
     --card-border-radius: 1rem;
@@ -34,9 +34,14 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    color: var(--color-dark);
-    background: var(--color-light);
+    color: var(--color-light);
+    background-image: url(../img/LIBRARIAPP\ \(6\).png);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fondo fijo */
+    background-position: center center; /* Centrado */
+    background-size: cover; /* Ajustar tamaño */
     overflow-x: hidden;
+
 }
 
 /*general*/
@@ -106,7 +111,7 @@ nav .container {
 }
 
 nav .search-bar {
-    background: var(--color-light);
+    background: var(--color-dark);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
 }
@@ -115,7 +120,7 @@ nav .search-bar input[type="search"] {
     background: transparent;
     width: 30vw;
     font-size: 0.9rem;
-    color: var(--color-dark);
+    color: var(--color-black);
     outline: none;
     border: none;
 }
@@ -171,12 +176,12 @@ main .container .left {
 }
 
 .left .sidebar .menu-item:hover {
-    background: var(--color-light);
+    background: var(--color-dark);
 }
 
 .left .sidebar ion-icon {
     font-size: 1.4rem;
-    color: var(--color-gray);
+    color: var(--color-primary);
     margin-left: 2rem;
     position: relative;
 }
@@ -198,7 +203,7 @@ main .container .left {
 }
 
 .left .sidebar .active {
-    background: var(--color-light);
+    background: var(--color-dark);
 }
 
 .left .sidebar .active ion-icon,
@@ -250,7 +255,7 @@ main .container .left {
     padding-left: 1rem;
     padding-top: 1.5rem;
     background: transparent;
-    color: var(--color-dark);
+    color: var(--color-black);
     margin-right: 1rem;
     outline: none;
     border: none;
@@ -482,7 +487,7 @@ main .container .right {
 }
 
 .customize-theme .card {
-    background: var(--color-white);
+    background: var(--color-dark);
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
@@ -626,11 +631,11 @@ main .container .right {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.534); /* Fondo semi-transparente */
     padding: 20px;
-    border: 1px solid var(--color-primary); /* Borde con color primario */
+    border: 1px solid var(--color-white); /* Borde con color primario */
     border-radius: 10px; /* Borde redondeado */
-    box-shadow: 0 4px 8px rgb(20, 2, 52); /* Sombra */
+    box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra */
     z-index: 1000;
     width: 90%;
     max-width: 400px;
@@ -639,19 +644,23 @@ main .container .right {
 }
 
 #comment-popup textarea {
+    background-color: rgba(0, 0, 0, 0);
     width: calc(100% - 20px); /* Ajuste para compensar el padding */
     height: 100px;
     margin: 0; /* Eliminar el margen */
     padding: 10px; /* Añadir padding para mantener espacio interno */
     border: none;
-    background-color: transparent;
     resize: none;
     outline: none; /* Eliminar el contorno al hacer clic */
     overflow: auto; /* Agregar scroll cuando sea necesario */
     width: 100%;
     margin-bottom: 10px;
     overflow-y: hidden; /* Evita que aparezca la barra de desplazamiento vertical */
+    color: var(--color-black); /* Color del texto ingresado */
 }
+
+
+
 
 #comment-popup .button-container {
     display: flex;
